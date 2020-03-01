@@ -1,5 +1,7 @@
 package br.com.everton.estruturadados.vetor;
 
+import java.util.Arrays;
+
 public class Vetor {
 
 	private String[] elementos;
@@ -24,7 +26,7 @@ public class Vetor {
 	 * }
 	 */
 
-	public boolean adiciona(String elemento) throws Exception {
+	public boolean adiciona(String elemento) {
 		if (this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
 			this.tamanho++;
@@ -32,6 +34,31 @@ public class Vetor {
 		}
 
 		return false;
+	}
+	
+	public int tamanho() {
+		return this.tamanho;
+	}
+
+	
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("[");
+		
+		for (int i = 0; i < tamanho - 1; i++) {
+			sb.append(this.elementos[i]);
+			sb.append(", ");
+		}
+		
+		if(this.tamanho > 0) {
+			sb.append(this.elementos[this.tamanho - 1]);
+		}
+		
+		sb.append("]");
+		
+		return sb.toString();
 	}
 
 }
