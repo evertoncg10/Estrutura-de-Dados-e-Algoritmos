@@ -43,6 +43,18 @@ public class Vetor {
 		return this.elementos[posicao];			
 	}
 	
+	public int busca(String elemento) {
+		int result = -1;
+		for (int i = 0; i < this.tamanho; i++) {
+			if(this.elementos[i].equals(elemento)) {
+				result = i;
+				break;
+			}
+		}
+		
+		return result;
+	}
+	
 	public int tamanho() {
 		return this.tamanho;
 	}
